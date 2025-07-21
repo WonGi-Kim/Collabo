@@ -8,7 +8,7 @@ import javax.crypto.spec.SecretKeySpec;
 import java.util.Base64;
 
 @Component
-public class JitSecretHarsher {
+public class JwtSecretHashUtil {
 
     public String hashSecret(byte[] secretKey, String algorithm) throws Exception {
         Mac hmac = Mac.getInstance(algorithm); // HmacSHA256 or HmacSHA512

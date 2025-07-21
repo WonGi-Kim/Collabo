@@ -17,13 +17,13 @@ import java.util.Date;
 public class JwtProvider {
 
     private final JwtConfig jwtConfig;
-    private final JitSecretHarsher secretHasher;
+    private final JwtSecretHashUtil jwtSecretHashUtil;
 
     private SecretKey secretKey;
 
     @PostConstruct
     public void init() {
-        this.secretKey = secretHasher.getSecretKey(jwtConfig.getBase64Secret(), "HmacSHA512");
+        this.secretKey = jwtSecretHashUtil.getSecretKey(jwtConfig.getBase64Secret(), "HmacSHA512");
     }
 
     public String generateAccessToken(Long userId, String email) {
