@@ -1,10 +1,19 @@
+version: '3.8'
+
 services:
   mysql:
-    image: 'mysql:latest'
-    environment:
-      - 'MYSQL_DATABASE=mydatabase'
-      - 'MYSQL_PASSWORD=secret'
-      - 'MYSQL_ROOT_PASSWORD=verysecret'
-      - 'MYSQL_USER=myuser'
+    image: mysql:8.0
+    container_name: collaboapp-mysql
+    restart: always
     ports:
-      - '3306'
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root1234
+      MYSQL_DATABASE: collabodb
+      MYSQL_USER: collabo
+      MYSQL_PASSWORD: collabo1234
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
