@@ -1,5 +1,7 @@
 package com.example.collabo.global.security;
 
+import com.example.collabo.domain.user.UserEntity;
+import com.example.collabo.domain.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
