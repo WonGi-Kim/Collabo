@@ -37,3 +37,8 @@ out/
 .vscode/
 /src/main/resources/application-dev.yml
 /logs
+
+### Backup (rename-project.sh 실행 시 생성) ###
+backup-*/
+*.bak
+
